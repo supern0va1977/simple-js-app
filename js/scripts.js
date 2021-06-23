@@ -1,19 +1,24 @@
-// Pokémon data
+// Pokémon data , height is in Meters
 
 let pokemonList = [
   {
     name: 'Charizard',
-    height: 67,
+    height: 1.7,
     types: ['fire', 'flying']
   },
   {
-    name:
-    height:
-    types:
+    name:'Beedrill',
+    height: 1.0,
+    types: ['bug', 'poison']
   },
   {
-    name:
-    height:
-    types:
+    name:'Nidoking',
+    height: 1.4,
+    types: ['poison', 'ground']
+  },
+  {
+    name:'Ivysaur',
+    height: 1.0,
+    types: ['grass', 'poison']
   },
 ]
