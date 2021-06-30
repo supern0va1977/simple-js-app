@@ -22,3 +22,8 @@ let pokemonList = [
     types: ['grass', 'poison']
   },
 ]
+
+for (let i=0; i < pokemonList.length; i++) {
+  // generates the pokemon list from the array //
+  document.write(pokemonList.name)
+}
