@@ -25,7 +25,8 @@ let pokemonList = [
 
 for (let i=0; i < pokemonList.length; i++) {
   // generates the pokemon list from the array //
-  document.write(pokemonList[i].name)
 
+  document.write(pokemonList[i].name + '(height :' + pokemonList[i].height + ')');
+// adds a doubble line break between each pokemon from the array
   document.write ('<br><br><br><br>');
 }
