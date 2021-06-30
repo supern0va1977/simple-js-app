@@ -31,6 +31,6 @@ for (let i=0; i < pokemonList.length; i++) {
   // if height is above 1.6m add text to page
   document.write(" <=== Wow, that's big!");
 }
-//Adds line breaks after each pokemon name
+//adds double spacing 
 document.write('<br><br><br><br>');
 }
