@@ -26,4 +26,6 @@ let pokemonList = [
 for (let i=0; i < pokemonList.length; i++) {
   // generates the pokemon list from the array //
   document.write(pokemonList[i].name)
+
+  document.write ('<br><br><br><br>');
 }
