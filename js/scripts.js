@@ -34,3 +34,15 @@ for (let i=0; i < pokemonList.length; i++) {
     //adds double spacing
     document.write('<br><br><br><br>');
 }
+
+// below here is a test
+
+// printArrayDetails function declaration
+function printArrayDetails(){
+  for (let i= 0; i < pokemonList.length; i++){
+    document.write (pokemonList.length);
+  }
+};
+
+printArrayDetails();
+printArrayDetails();
