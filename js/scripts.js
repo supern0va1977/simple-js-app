@@ -24,13 +24,13 @@ let pokemonList = [
 ];
 
 for (let i=0; i < pokemonList.length; i++) {
-  // generates the pokemon list from the array //
-  document.write(pokemonList[i].name + '(height :' + pokemonList[i].height + ')');
-  // used to check height in meters
-  if (pokemonList[i].height > 1.6) {
-  // if height is above 1.6m add text to page
-  document.write(" <=== Wow, that's big!");
-}
-//adds double spacing 
-document.write('<br><br><br><br>');
+    // generates the pokemon list from the array //
+    document.write(pokemonList[i].name + '(height :' + pokemonList[i].height + ')');
+    // used to check height in meters
+    if (pokemonList[i].height > 1.6) {
+      // if height is above 1.6m add text to page
+    document.write(" <=== Wow, that's big!");
+  }
+    //adds double spacing
+    document.write('<br><br><br><br>');
 }
