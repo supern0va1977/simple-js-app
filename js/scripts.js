@@ -26,16 +26,19 @@ let pokemonRepository = (function () {
       types: ['grass', 'poison']
     },
   ];
-
+  function add (pokemon) {
+    pokemonList.push (item);
+  }
   function getAll() {
     return pokemonList;
   }
-
   return {
     add: add,
     getAll: getAll,
+  };
+})();
 
- };
-}) ();
-
-pokemonRepository.getAll().forEach(function(pokemon));
+pokemonRepository.getAll().forEach(function(pokemon) {
+  document.write (pokemon.name + ' is ' + pokemon.height + ' meters Tall '
+  + ' ability => ' + pokemon.types);
+});
