@@ -35,11 +35,7 @@ let pokemonRepository = (function () {
     add: add,
     getAll: getAll,
 
-  };
+ };
 }) ();
 
-// shows the pokemonList
-pokemonList.forEach(function(pokemon) {
-  (pokemon.name + ' is ' + pokemon.height + ' meters Tall ' +
-  pokemon.types + ' => ability   ' );
-});
+pokemonRepository.getAll().forEach(function(pokemon));
