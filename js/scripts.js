@@ -31,16 +31,10 @@ let pokemonRepository = (function () {
     return pokemonList;
   }
 
-  function add(pokemon) {
-    if (typeof pokemon === 'object' && Object.keys(pokemon).includes('name') && Object.keys(pokemon).includes('type') && Object.keys(pokemon).includes('height')) {
-      pokemonList.push(pokemon);
-    }
-  }
-
   return {
     add: add,
     getAll: getAll,
-    
+
   };
 }) ();
 
