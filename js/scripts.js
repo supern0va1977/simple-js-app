@@ -26,12 +26,15 @@ let pokemonRepository = (function () {
       types: ['grass', 'poison']
     },
   ];
+
   function add (pokemon) {
-    pokemonList.push (item);
+    pokemonList.push(pokemon);
   }
+
   function getAll() {
     return pokemonList;
   }
+
   return {
     add: add,
     getAll: getAll,
@@ -39,6 +42,12 @@ let pokemonRepository = (function () {
 })();
 
 pokemonRepository.getAll().forEach(function(pokemon) {
-  document.write (pokemon.name + ' is ' + pokemon.height + ' meters Tall '
+  console.log (pokemon.name + ' is ' + pokemon.height + ' meters Tall '
   + ' ability => ' + pokemon.types);
 });
+
+//to check code us commands below
+
+//console.log(pokemonRepository.getAll());
+//pokemonRepository.add({ name: 'CookieMonster  height: 10, ability => he can eat cookies all day ' });
+//console.log(pokemonRepository.getAll());
