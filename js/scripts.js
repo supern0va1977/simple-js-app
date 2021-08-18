@@ -12,7 +12,7 @@ let pokemonRepository = (function () {
     titleElement.innerText = pokemon.name.toUpperCase();
     titleElement.classList.add('title');
 
-    let imgElement = document.createElement('p');
+    let heightElement = document.createElement('p');
     heightElement.innerText = 'height';
     heightElement.classList.add('height');
 
@@ -51,7 +51,7 @@ let pokemonRepository = (function () {
 
 
   let pokemonList = [];
-  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=2000';
+  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=20';
 
   function add (pokemon) {
     pokemonList.push(pokemon);
