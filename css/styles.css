@@ -1,3 +1,15 @@
+body {
+text-align: center;
+margin: 0 auto;
+background: linear-gradient(#6A5ACD, #800080, #228B22);
+font-family: sans-serif;
+}
+
+li {
+  list-style-type: none;
+}
+
+
 .class-selector {
   background-color: #4caf50; /* Green */
   border: none;
