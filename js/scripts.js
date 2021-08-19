@@ -3,7 +3,7 @@
 let pokemonRepository = (function () {
 
   let modalContainer = document.querySelector('#modal-container');
-
+  //generates modal with data being requested
   function showModal(pokemon) {
     modalContainer.innerHTML = '';
     let modal = document.createElement('div');
@@ -14,7 +14,7 @@ let pokemonRepository = (function () {
     titleElement.classList.add('title');
 
     let heightElement = document.createElement('p');
-    heightElement.innerText = `Height: ${pokemon.height}`;
+    heightElement.innerText = `height: ${pokemon.height}`;
     heightElement.classList.add('height');
 
     let imgElement = document.createElement('img');
@@ -51,7 +51,7 @@ let pokemonRepository = (function () {
     }
   });
 
-
+   //creates an empty array that is populated with data from the API URL
   let pokemonList = [];
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=20';
 
@@ -65,7 +65,7 @@ let pokemonRepository = (function () {
     }
   }
 
-
+ //function used to call the pokemon and add to pokemonList 
   function loadList() {
     return fetch(apiUrl).then(function (response) {
       return response.json();
@@ -82,7 +82,7 @@ let pokemonRepository = (function () {
     })
   }
 
-//adds list of pokemon buttons
+//adds list of pokemon buttons and information
   function addListItem(pokemon) {
     let list = document.querySelector('.pokemon-list');
     let listItem = document.createElement('li');
@@ -95,13 +95,12 @@ let pokemonRepository = (function () {
       showDetails(pokemon);
     });
   }
-
+  //loads data from listed URL
   function loadDetails(item) {
     let url = item.detailsUrl;
     return fetch(url).then(function (response) {
       return response.json();
     }).then(function (details) {
-      // Now we add the details to the item
       item.imageUrl = details.sprites.front_default;
       item.height = details.height;
       item.types = details.types;
