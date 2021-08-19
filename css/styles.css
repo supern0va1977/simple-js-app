@@ -24,7 +24,7 @@ li {
   transition-duration: 0.4s;
   cursor: pointer;
   background-color: black;
-  color: white;
+  color: #4caf50;
   border: 6px solid #4caf50;
 }
 
