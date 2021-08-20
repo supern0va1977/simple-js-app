@@ -26,10 +26,10 @@ let pokemonRepository = (function () {
     closeButtonElement.innerText = 'Close';
     closeButtonElement.addEventListener('click', hideModal);
 
+    modal.appendChild(closeButtonElement);
     modal.appendChild(titleElement);
     modal.appendChild(heightElement);
     modal.appendChild(imgElement);
-    modal.appendChild(closeButtonElement);
     modalContainer.appendChild(modal);
 
     modalContainer.classList.add('is-visible');
@@ -65,7 +65,7 @@ let pokemonRepository = (function () {
     }
   }
 
- //function used to call the pokemon and add to pokemonList 
+ //function used to call the pokemon and add to pokemonList
   function loadList() {
     return fetch(apiUrl).then(function (response) {
       return response.json();

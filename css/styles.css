@@ -1,3 +1,5 @@
+
+
 body {
 text-align: center;
 margin: 0 auto;
@@ -25,7 +27,7 @@ li {
   cursor: pointer;
   background-color: black;
   color: #4caf50;
-  border: 6px solid #4caf50;
+  border: 6px solid #191950;
 }
 
 #modal-container {
