@@ -6,6 +6,104 @@ background: linear-gradient(#6A5ACD, #800080, #228B22);
 font-family: sans-serif;
 }
 
+:root {
+  --pkm-red: #FF0000;
+  --pkm-red-dark: #CC0000;
+  --pkm-blue: #3B4CCA;
+  --pkm-yellow: #FFDE00;
+  --dark-grey: #2f2828;
+  --font-size-main: 16px;
+  --heading-big: 25px;
+}
+
+
+
+h1,
 li {
+  font-family: 'Press Start 2P', cursive;
+}
+
+h1 {
+  font-size: var(--heading-sm);
+  text-transform: capitalize;
+}
+
+p {
+  font-size: 20px;
+}
+
+body {
+  font-family: 'Anton', monospace;
+  font-size: var(--font-size-main);
+  text-align: center;
+  background-color: var(--dark-grey);
+}
+
+button {
+  border-radius: 30px;
+}
+
+#btn-back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  background-color: var(--pkm-red-dark);
+  color: white;
+}
+
+
+/* MAIN CONTENT - LOADING MESSAGE */
+.loading-message {
+  color: white;
+}
+
+.hidden {
+  display: none;
+}
+
+/* MAIN CONTENT - POKEMON LIST */
+ul {
+  padding: 0;
   list-style-type: none;
+}
+
+li {
+  flex: 1 1 0;
+  padding: 10px;
+}
+
+.pokemon-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+}
+
+.pokemon-button {
+  background-color: #191950;
+  color: white;
+  width: 250px;
+  padding: 20px;
+  margin: 10px;
+  text-transform: capitalize;
+  border-radius: 30px;
+  border: 2px solid grey;
+}
+
+.pokemon-button:hover,
+.pokemon-button:focus {
+  background-color: #228B22;
+  color: white;
+  cursor: pointer;
+  opacity: 0.9;
+  border-color: var(--pkm-yellow);
+}
+
+.pokemon-button:not(:disabled):not(.disabled):active,
+.pokemon-button:not(:disabled):not(.disabled):focus{
+  color: var(--pkm-yellow);
+  background: var(--dark-grey);
+  border-color: var(--pkm-red);
+  box-shadow: 0 0 8px var(--pkm-yellow);
 }
