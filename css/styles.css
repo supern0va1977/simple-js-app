@@ -7,24 +7,21 @@ font-family: sans-serif;
 }
 
 :root {
-  --pkm-red: #FF0000;
-  --pkm-red-dark: #CC0000;
-  --pkm-blue: #3B4CCA;
-  --pkm-yellow: #FFDE00;
+  --red: #CC0000;
+  --blue: #3B4CCA;
+  --darkblue: #191950;
+  --purpleblue: #6A5ACD;
+  --darkpurple: #800080;
+  --limegreen: #228B22;
+  --yellow: #FFDE16;
   --dark-grey: #2f2828;
   --font-size-main: 16px;
   --heading-big: 25px;
 }
 
 
-
-h1,
-li {
-  font-family: 'Press Start 2P', cursive;
-}
-
 h1 {
-  font-size: var(--heading-sm);
+  font-size: var(--heading-big);
   text-transform: capitalize;
 }
 
@@ -48,12 +45,12 @@ button {
   bottom: 20px;
   right: 20px;
   display: none;
-  background-color: var(--pkm-red-dark);
+  background-color: var(--red);
   color: white;
 }
 
 
-/* MAIN CONTENT - LOADING MESSAGE */
+/* loading message */
 .loading-message {
   color: white;
 }
@@ -62,7 +59,8 @@ button {
   display: none;
 }
 
-/* MAIN CONTENT - POKEMON LIST */
+
+/* main */
 ul {
   padding: 0;
   list-style-type: none;
@@ -80,8 +78,20 @@ li {
   align-items: center;
 }
 
+.modal-content {
+    color: var(--dark-grey);
+    font-family: 'Anton', monospace;
+    font-weight: bold;
+    position: relative;
+    width: 80%;
+    left: 13%;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    background: linear-gradient(#6A5ACD, #800080, #FFDE16);
+}
+
 .pokemon-button {
-  background-color: #191950;
+  background-color: var(--darkblue);
   color: white;
   width: 250px;
   padding: 20px;
@@ -93,17 +103,17 @@ li {
 
 .pokemon-button:hover,
 .pokemon-button:focus {
-  background-color: #228B22;
+  background-color: var(--limegreen);
   color: white;
   cursor: pointer;
   opacity: 0.9;
-  border-color: var(--pkm-yellow);
+  border-color: var(--yellow);
 }
 
 .pokemon-button:not(:disabled):not(.disabled):active,
 .pokemon-button:not(:disabled):not(.disabled):focus{
-  color: var(--pkm-yellow);
+  color: var(--yellow);
   background: var(--dark-grey);
-  border-color: var(--pkm-red);
-  box-shadow: 0 0 8px var(--pkm-yellow);
+  border-color: var(--red);
+  box-shadow: 0 0 8px var(--yellow);
 }

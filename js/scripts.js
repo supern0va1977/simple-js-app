@@ -2,14 +2,14 @@
 let pokemonRepository = (function() {
 
   let pokemonList = [];
-  const apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=41';
+  const apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=42';
 
-  // displays a loading message until the content has loaded
+  // shows a loading message
   function showLoadingMessage() {
     document.querySelector('.loading-message').classList.add('visible');
   }
 
-  // hides the loading message as soon as the content is loaded
+  // hides message once data is displayed
   function hideLoadingMessage() {
     document.querySelector('.loading-message').classList.add('hidden');
   }
@@ -19,7 +19,7 @@ let pokemonRepository = (function() {
     return pokemonList;
   }
 
-  // adds new Pokémon to the pokemonList array with a conditional to make sure the correct type of data is entered.
+  // adds new Pokémon to the pokemonList array
   function add(pokemon) {
     if (
       typeof pokemon === 'object' &&
@@ -32,7 +32,7 @@ let pokemonRepository = (function() {
     }
   }
 
-  // function that adds the list of Pokémon to the DOM, as buttons in an unordered list.
+  // adds the list of Pokémon to the DOM, as buttons in an unordered list.
   function addListItem(pokemon) {
     let pokemonList = document.querySelector('.pokemon-list');
 
@@ -42,19 +42,19 @@ let pokemonRepository = (function() {
     let pokemonButton = document.createElement('button');
     pokemonButton.innerText = pokemon.name;
     pokemonButton.classList.add('pokemon-button', 'btn', 'btn-primary');
-    // pokemonButton.id = 'open-modal';
+
     pokemonButton.setAttribute('data-target', '#pokemonModal');
     pokemonButton.setAttribute('data-toggle', 'modal');
 
     listItem.appendChild(pokemonButton);
     pokemonList.appendChild(listItem);
-
-    pokemonButton.addEventListener('click', function() { // the showDetails() function will be executed when the user clicks on the Pokemon's button
+    // show details on button click
+    pokemonButton.addEventListener('click', function() {
       showDetails(pokemon);
     })
   };
 
-  // loads the Pokémon list from the API (name + url to details)
+  // loads the Pokémon list from the API
   function loadList() {
     showLoadingMessage();
     return fetch(apiUrl).then(function(response) {
@@ -73,7 +73,7 @@ let pokemonRepository = (function() {
     });
   }
 
-  // loads Pokémon details
+  // Pokémon details
   function loadDetails(item) {
     showLoadingMessage();
     let url = item.detailsUrl;
@@ -99,16 +99,16 @@ let pokemonRepository = (function() {
     });
   }
 
-  // clicking on the Pokémon's button will open the modal and show all the Pokémon details
+  // this is used to open the modal and show all the Pokémon details
   function showDetails(item) {
     pokemonRepository.loadDetails(item).then(function() {
       showModal(item);
     });
   }
 
-  // opens the modal by making it visible
+  // makes the modal visiable
   function showModal(item) {
-    // modalContainer.classList.add('is-visible');
+
     let modalBody = $(".modal-body");
     let modalTitle = $(".modal-title");
     let modalHeader = $(".modal-header");
@@ -126,7 +126,7 @@ let pokemonRepository = (function() {
     let typesElement = $('<p>' + 'Types : ' + item.types.join(', ') + '</p>');
     let abilitiesElement = $('<p>' + 'Abilities : ' + item.abilities.join(', ') + '</p>');
 
-    // display the separate Pokémon details inside the modal
+    // display all details of the pokemon inside the modal
     modalTitle.append(nameElement);
     modalBody.append(imageElementFront);
     modalBody.append(imageElementBack);
@@ -153,7 +153,7 @@ pokemonRepository.loadList().then(function() {
   });
 });
 
-//Get the button
+//Get button
 let mybutton = document.getElementById("btn-back-to-top");
 
 // When the user scrolls down 200px from the top of the document, show the button
@@ -171,7 +171,7 @@ function scrollFunction() {
     mybutton.style.display = "none";
   }
 }
-// When the user clicks on the button, scroll to the top of the document
+// When the user clicks on the button, go to the top of the page 
 mybutton.addEventListener("click", backToTop);
 
 function backToTop() {
