@@ -2,7 +2,7 @@
 let pokemonRepository = (function() {
   let pokemonList = [];
   const apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=42";
-
+  let searchInput = document.querySelector('#searchBar');
   /* eslint-disable no-console */
   console.error("Error when validating item");
   ("eslint-enable no-console");
@@ -144,6 +144,19 @@ let pokemonRepository = (function() {
     modalBody.append(typesElement);
     modalBody.append(abilitiesElement);
   }
+
+  searchInput.addEventListener('input', function() {
+    let listPokemon = document.querySelectorAll('li');
+    let value = searchInput.value.toUpperCase();
+
+    listPokemon.forEach(function(pokemon) {
+      if (pokemon.innerText.toUpperCase().indexOf(value) > -1) {
+        pokemon.style.display = '';
+      } else {
+        pokemon.style.display = 'none';
+      }
+    });
+  });
 
   return {
     add: add,

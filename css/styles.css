@@ -101,6 +101,25 @@ li {
   border: 2px solid grey;
 }
 
+.search {
+  background-color: var(--darkblue);
+  color: white;
+  width: 250px;
+  padding: 20px;
+  margin: 10px;
+  text-transform: capitalize;
+  border-radius: 30px;
+  border: 2px solid grey;
+}
+
+.search:not(:disabled):not(.disabled):active,
+.search:not(:disabled):not(.disabled):focus{
+  color: var(--yellow);
+  background: var(--dark-grey);
+  border-color: var(--red);
+  box-shadow: 0 0 8px var(--yellow);
+}
+
 .pokemon-button:hover,
 .pokemon-button:focus {
   background-color: var(--limegreen);
