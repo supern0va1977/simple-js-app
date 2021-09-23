@@ -3,9 +3,6 @@ let pokemonRepository = (function() {
   let pokemonList = [];
   const apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=42";
   let searchInput = document.querySelector('#searchBar');
-  /* eslint-disable no-console */
-  console.error("Error when validating item");
-  ("eslint-enable no-console");
 
   // shows a loading message
   function showLoadingMessage() {
@@ -30,8 +27,6 @@ let pokemonRepository = (function() {
       "detailsUrl" in pokemon
     ) {
       pokemonList.push(pokemon);
-    } else {
-      console.log("Incorrect Pokemon entry.");
     }
   }
 
@@ -75,7 +70,6 @@ let pokemonRepository = (function() {
         });
       })
       .catch(function(e) {
-        console.error(e);
       });
   }
 
@@ -104,8 +98,7 @@ let pokemonRepository = (function() {
         }
       })
       .catch(function(e) {
-        console.error(e);
-      });
+    });
   }
 
   // this is used to open the modal and show all the Pokémon details
