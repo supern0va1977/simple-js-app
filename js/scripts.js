@@ -69,8 +69,7 @@ let pokemonRepository = (function() {
           add(pokemon);
         });
       })
-      .catch(function(e) {
-      });
+      
   }
 
   // Pokémon details
@@ -97,8 +96,8 @@ let pokemonRepository = (function() {
           item.abilities.push(details.abilities[i].ability.name);
         }
       })
-      .catch(function(e) {
-    });
+
+
   }
 
   // this is used to open the modal and show all the Pokémon details
